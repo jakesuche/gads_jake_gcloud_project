@@ -81,9 +81,9 @@
         <body>
         <h1>Welcome to my excellent blog</h1>
         <?php
-        $dbserver = "CLOUDSQLIP";
+        $dbserver = "35.195.0.105 ";
         $dbuser = "blogdbuser";
-        $dbpassword = "DBPASSWORD";
+        $dbpassword = "root";
         // In a production blog, we would not store the MySQL
         // password in the document root. Instead, we would store it in a
         // configuration file elsewhere on the web server VM instance.
@@ -103,5 +103,38 @@
 
     6  Restart the web server:
 
-        sudo service apache2 restart
+        || sudo service apache2 restart
+
+    7 Open the  bloghost VM instance's external IP address followed by /index.php. 
+     
+        || google-chrome   35.228.30.200/index.php
+    
+
+5  Configure an application in a Compute Engine instance to use a Cloud Storage object
+
+
+    1 upload image to my cloud bucket
+
+        || gsutil cp "/path/to/image" gs://$DEVSHELL_PROJECT_ID
+
+    2   Make the image publicly accessible:
+
+        || gsutil acl ch -u AllUsers:R gs://$DEVSHELL_PROJECT_ID
+
+    3 Enter this command to set your working directory to the document root of the web server
+        ||  cd /var/www/html
+
+    4 Edit the file with nano text  editor
+
+        || sudo nano index.php
+
+    5 Use the arrow keys to move the cursor to the line that contains the h1 element. Press Enter to open up a new, blank screen line, and then paste the URL 
+
+         <img src='https://storage.googleapis.com/<project_id>/<image_file_name>' />
+
+         Press Ctrl+O, and then press Enter to save your edited file. and Press Ctrl+X to exit the nano text editor.   
+
+    7 Restart the web server:  
+        || sudo service apache2 restart
+
 
