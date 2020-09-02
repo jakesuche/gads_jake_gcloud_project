@@ -24,7 +24,7 @@
     
     ||  gcloud compute instances create "my-vm-1" --machine-type "n1-standard-1" --image-project "debian-cloud" --image "debian-9-stretch-v20190213"    --subnet  "default" --tags http             --metadata=startup-script=apt-get\ update$'\n'apt-get\ install\ apache2\ php\ php-mysql\ -y$'\n'service\ apache2\ restart
 
-   ||  gcloud compute --project=qwiklabs-gcp-01-51df6ecbff50 firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
+    ||  gcloud compute --project=qwiklabs-gcp-01-51df6ecbff50 firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
 
  2  Create a Cloud Storage bucket using the gsutil command line
 
@@ -67,11 +67,41 @@
 4 Configure an application in a Compute Engine instance to use Cloud SQL
 
     1 ssh to bloghost vm to open connection
-        || gcloud compute ssh bloghost
+        || gcloud compute ssh bloghost|<external ip address>
     
     2 In your ssh session on bloghost, change your working directory to the document root of the web server:
         || cd /var/www/html
     
     3 Use the nano text editor to edit a file called index.php:
         || sudo nano index.php
+    4 Paste the content below into the file:
+
+        <html>
+        <head><title>Welcome to my excellent blog</title></head>
+        <body>
+        <h1>Welcome to my excellent blog</h1>
+        <?php
+        $dbserver = "CLOUDSQLIP";
+        $dbuser = "blogdbuser";
+        $dbpassword = "DBPASSWORD";
+        // In a production blog, we would not store the MySQL
+        // password in the document root. Instead, we would store it in a
+        // configuration file elsewhere on the web server VM instance.
+
+        $conn = new mysqli($dbserver, $dbuser, $dbpassword);
+
+        if (mysqli_connect_error()) {
+                echo ("Database connection failed: " . mysqli_connect_error());
+        } else {
+                echo ("Database connection succeeded.");
+        }
+        ?>
+        </body></html>
+
+    5  Press Ctrl+O, and then press Enter to save your edited file and Press Ctrl+X to exit the nano text editor.
+
+
+    6  Restart the web server:
+
+        sudo service apache2 restart
 
