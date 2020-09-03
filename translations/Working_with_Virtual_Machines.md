@@ -150,11 +150,11 @@
 
 ###### 8 select nano when prompted and At the bottom of the cron table, write the following line:
 
-           ``` 
-            || 0 */4 * * * /home/minecraft/backup.sh
-           ```
+```
+    || 0 */4 * * * /home/minecraft/backup.sh
+```
 
-                 *Press Ctrl+O, ENTER to save the cron table, and press Ctrl+X to exit nano*
+ *Press Ctrl+O, ENTER to save the cron table, and press Ctrl+X to exit nano*
 
 ##### 6  Server maintenance
 
