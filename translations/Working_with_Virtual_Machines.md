@@ -22,9 +22,9 @@
 
     Schedule regular backups
 
-#### Steps
+### Steps
 
-##### 1 Create the VM
+#### 1 Create the VM
 
 ######  1 Set account to be used for the projects
 
@@ -42,7 +42,7 @@
 
             || gcloud compute instances create mc-server --zone=us-central1-a --machine-type=e2-medium --subnet=default --address=104.197.187.73  --metadata=startup-script-url=https://storage.googleapis.com/cloud-training/archinfra/mcserver/startup.sh,shutdown-script-url= https://storage.googleapis.com/cloud-training/archinfra/mcserver/shutdown.sh --tags=minecraft-server --image=debian-9-stretch-v20200902  --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=mc-server --create-disk=mode=rw,size=50,type=projects/qwiklabs-gcp-04-75b71598f1d9/zones/us-central1-a/diskTypes/pd-ssd,name=minecraft-disk,device-name=minecraft-disk
 
-##### 2 Prepare the data disk
+#### 2 Prepare the data disk
 
 ###### 1 connecting to mc-server
 
@@ -62,7 +62,7 @@
 
             || sudo mount -o discard,defaults /dev/disk/by-id/google-minecraft-disk /home/minecraft
 
-##### 3 Install and run the application
+#### 3 Install and run the application
 
    *Install the Java Runtime Environment (JRE) and the Minecraft server*
 
@@ -93,7 +93,7 @@
             || nano eula.txt
                 Change the last line of the file from eula=false to eula=true
 
-######  Create a virtual terminal screen to start the Minecraft server
+   _Create a virtual terminal screen to start the Minecraft server_
       
       <!-- If you start the Minecraft server again now, it is tied to the life of your SSH session: that is, if you close your SSH terminal, the server is also terminated. To avoid this issue, you can use screen, an application that allows you to create a virtual terminal that can be "detached," becoming a background process, or "reattached," becoming a foreground process. When a virtual terminal is detached to the background, it will run whether you are logged in or not. -->
 
@@ -160,6 +160,12 @@
 
              ||  1 sudo screen -r -X stuff '/stop\n'
 
+
+
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
 
 
 
