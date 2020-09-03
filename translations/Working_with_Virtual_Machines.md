@@ -64,7 +64,7 @@
 
 ##### 3 Install and run the application
 
-###### Install the Java Runtime Environment (JRE) and the Minecraft server
+   *Install the Java Runtime Environment (JRE) and the Minecraft server*
 
 ###### 1 In the SSH terminal for mc-server, to update the Debian repositories on the VM, run the following command:
 
@@ -150,9 +150,9 @@
 
 ###### 8 select nano when prompted and At the bottom of the cron table, write the following line:
 
-```
-    || 0 */4 * * * /home/minecraft/backup.sh
-```
+
+            || 0 */4 * * * /home/minecraft/backup.sh
+
 
  *Press Ctrl+O, ENTER to save the cron table, and press Ctrl+X to exit nano*
 
