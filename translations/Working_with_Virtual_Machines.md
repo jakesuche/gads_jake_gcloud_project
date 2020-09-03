@@ -1,6 +1,6 @@
 # Working with Virtual Machines
 
-## the symbol (||) show the command line instruction
+## the symbol || show the command line instruction
 
 ## Overview
     In this lab, you set up a game application—a Minecraft server.
