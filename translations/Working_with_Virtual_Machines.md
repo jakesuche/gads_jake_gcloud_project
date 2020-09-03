@@ -124,7 +124,7 @@
 
             || sudo nano /home/minecraft/backup.sh
     
-######  3  the command for backup writen inside backup.sh
+######  3  add the following line  inside backup.sh
 
             #!/bin/bash
             screen -r mcs -X stuff '/save-all\n/save-off\n'
