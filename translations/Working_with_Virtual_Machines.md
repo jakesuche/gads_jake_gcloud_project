@@ -14,13 +14,13 @@
 ### Objectives
     In this lab, you learn how to perform the following tasks:
 
-    Customize an application server
+   - [x] Customize an application server
 
-    Install and configure necessary software
+   - [x] Install and configure necessary software
 
-    Configure network access
+   - [x] Configure network access
 
-    Schedule regular backups
+   - [x] Schedule regular backups
 
 ### Steps
 
@@ -108,11 +108,11 @@
 
             || sudo screen -r mcs
 
-##### 4 Allow client traffic
+#### 4 Allow client traffic
 
             || gcloud compute --project=qwiklabs-gcp-04-75b71598f1d9 firewall-rules create minecraft-rule --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:25565 --source-ranges=0.0.0.0/0 --target-tags=minecraft-server
 
-##### 5 Schedule regular backups
+#### 5 Schedule regular backups
 
 ######  1 create a storage bucket 
 
@@ -138,7 +138,7 @@
             || sudo chmod 755 /home/minecraft/backup.sh
 
 
-###### Test the backup script and schedule a cron job
+  *Test the backup script and schedule a cron job*
 
 ###### 6 In the mc-server SSH terminal, run the backup script:
 
@@ -154,18 +154,14 @@
             || 0 */4 * * * /home/minecraft/backup.sh
 
 
- *Press Ctrl+O, ENTER to save the cron table, and press Ctrl+X to exit nano*
+  *Press Ctrl+O, ENTER to save the cron table, and press Ctrl+X to exit nano*
 
-##### 6  Server maintenance
+#### 6  Server maintenance
 
              ||  1 sudo screen -r -X stuff '/stop\n'
 
 
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
 
 
 
