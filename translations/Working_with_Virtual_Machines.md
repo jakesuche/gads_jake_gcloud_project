@@ -25,11 +25,11 @@
 ### Steps
 
 ### Opening your terminal
-_authentication your gcloud account_
+A  authentication your gcloud account_
             || gcloud auth login
-_list your projects_
+B  list your projects_
             || glcoud projects list
-_setting your project_
+C  setting your project_
             || gcloud config set project qwiklabs-gcp-04-75b71598f1d9
 
 #### 1 Create the VM
