@@ -133,7 +133,7 @@ _Connect to the Sql instance._
 
 ######  5 Use the arrow keys to move the cursor to the line that contains the h1 element. Press Enter to open up a new, blank screen line, and then paste the URL 
 
-         <img src='https://storage.googleapis.com/<project_id>/<image_file_name>' />
+         <img src='https://storage.googleapis.com/<project_id>/myimage' />
 
          Press Ctrl+O, and then press Enter to save your edited file. and Press Ctrl+X to exit the nano text editor.   
 
