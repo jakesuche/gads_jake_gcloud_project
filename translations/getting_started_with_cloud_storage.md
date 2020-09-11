@@ -1,4 +1,5 @@
 # Google Cloud Fundamentals: Getting Started with Cloud Storage and Cloud SQL
+# This  double stroke  *||* sysmbols shows command line instruction
 
 ## Overview
     In this lab, you create a Cloud Storage bucket and place an image in it. You'll also configure an application running in Compute Engine to use a database managed by Cloud SQL. For this lab, you will configure a web server with PHP, a web development environment that is the basis for popular blogging software. Outside this lab, you will use analogous techniques to configure these packages.
@@ -19,6 +20,15 @@
    
 
 ## steps
+
+### Opening your terminal
+_authentication your gcloud account_
+            || gcloud auth login
+_list your projects_
+            || glcoud projects list
+_setting your project_
+            || gcloud config set project qwiklabs-gcp-01-51df6ecbff50
+
 
 ### 1  Deploy a web server VM instance
     
@@ -133,7 +143,7 @@ _Connect to the Sql instance._
 
 ######  5 Use the arrow keys to move the cursor to the line that contains the h1 element. Press Enter to open up a new, blank screen line, and then paste the URL 
 
-         <img src='https://storage.googleapis.com/<project_id>/myimage' />
+         <img src='https://storage.googleapis.com/qwiklabs-gcp-01-51df6ecbff50/myimage' />
 
          Press Ctrl+O, and then press Enter to save your edited file. and Press Ctrl+X to exit the nano text editor.   
 
