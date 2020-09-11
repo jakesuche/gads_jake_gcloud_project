@@ -24,7 +24,7 @@ _authentication your gcloud account_
 _list your projects_
             || glcoud projects list
 _setting your project_
-            || gcloud config set project qwiklabs-gcp-01-51df6ecbff50
+            || gcloud config set project qwiklabs-gcp-05-51dfdfcbff40
 
 
 ### 1 Create a  compute engine  virtual machine using the GCP Console
