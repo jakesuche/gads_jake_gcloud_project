@@ -22,11 +22,16 @@
 ## steps
 
 ### Opening your terminal
-A authentication your gcloud account_
+1  authentication your gcloud account
+
             || gcloud auth login
-B list your projects_
+
+2 list your projects
+
             || glcoud projects list
-C setting your project_
+            
+3  setting your project
+
             || gcloud config set project qwiklabs-gcp-01-51df6ecbff50
 
 
